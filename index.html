@@ -1,383 +1,289 @@
-<!DOCTYPE html><html lang="en"><head>
-            <title data-id="th-modified">Web Page</title>
-            
-          <meta property="og:title" content="Web Page" data-id="th-modified"><meta name="description" content="code" data-id="th-modified"><meta property="og:description" content="code" data-id="th-modified"><meta property="og:image" content="https://tiiny.host/assets/logo-purple-bg.png" data-id="th-modified"><meta property="og:url" content="https://gold-maryanna-81.tiiny.site/" data-id="th-modified"><meta property="og:type" content="website" data-id="th-modified"><script defer="" data-domain="gold-maryanna-81.tiiny.site" src="https://analytics.tiiny.site/js/plausible.js"></script><script type="text/javascript" src="https://tiiny.host/ad-script.js"></script></head>
-          <body><div style="position: fixed !important; bottom: 0% !important; left: 0% !important; right: 0% !important; width: 100% !important; height: 55px !important; z-index: 9999 !important;"><a href="https://tiiny.host?ref=free-site">
-    <div style="padding: 10px !important; height: 55px; text-align: center; background: rgb(220,137,232) !important; background: linear-gradient(141deg, rgba(220,137,232,1) 0%, rgba(144,64,204,1) 100%) !important;">
-      <img style="height: 35px !important; width: auto !important;" src="https://tiiny.host/assets/img/ad.png" alt="tiiny.host">
-    </div>
-  </a></div><div style="position: fixed !important; bottom: 0% !important; left: 0% !important; right: 0% !important; width: 100% !important; height: 55px !important; z-index: 9999 !important;"><a href="https://tiiny.host?ref=free-site">
-    <div style="padding: 10px !important; height: 55px; text-align: center; background: rgb(220,137,232) !important; background: linear-gradient(141deg, rgba(220,137,232,1) 0%, rgba(144,64,204,1) 100%) !important;">
-      <img style="height: 35px !important; width: auto !important;" src="https://tiiny.host/assets/img/ad.png" alt="tiiny.host" class="">
-    </div>
-  </a></div>
-            
-
-
+<!DOCTYPE html>
+<html lang="en">
+<head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>365 Days of Us | Our Story</title>
+<title>365 Days of Us ❤️</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,400&amp;family=Montserrat:wght@200;400;600&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
 
 <style>
-:root{
-  --gold:#d4af37;
-  --rose:#ff758c;
-  --dark:#0a0a0b;
-}
-
-*{margin:0;padding:0;box-sizing:border-box}
-
+/* ---------- BASE ---------- */
 body{
-  background:var(--dark);
-  color:#fff;
-  font-family:'Montserrat',sans-serif;
-  height:100vh;
-  overflow:hidden;
-  display:flex;
-  justify-content:center;
-  align-items:center;
+margin:0;
+font-family:'Montserrat',sans-serif;
+background:#0a0a0b;
+color:white;
+overflow:hidden;
+display:flex;
+justify-content:center;
+align-items:center;
+height:100vh;
+}
+h1{font-family:'Playfair Display',serif}
+.accent{color:#d4af37}
+
+/* ---------- HEART BACKGROUND ---------- */
+.heart-bg{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+overflow:hidden;
+z-index:-1;
+pointer-events:none;
+}
+.heart{
+position:absolute;
+bottom:-40px;
+font-size:18px;
+opacity:0.6;
+animation:floatUp linear infinite;
+}
+@keyframes floatUp{
+from{transform:translateY(0) scale(0.8);opacity:0}
+to{transform:translateY(-120vh) scale(1.2);opacity:1}
 }
 
-/* Background */
-#bgCanvas{
-  position:fixed;
-  inset:0;
-  z-index:-3;
+/* ---------- SECTIONS ---------- */
+.container{
+width:90%;
+height:80vh;
+position:relative;
+z-index:1;
 }
-
-/* Floating emojis */
-.love-emoji{
-  position:fixed;
-  font-size:2.4rem;
-  opacity:.85;
-  pointer-events:none;
-  z-index:2;
-}
-
-#emoji-1{left:-10px;bottom:15%;animation:floatSide 4s infinite alternate}
-#emoji-2{right:-10px;top:20%;animation:floatSideRight 5s infinite alternate}
-#emoji-3{left:5%;top:-10px;animation:floatDown 6s infinite alternate}
-#emoji-4{right:10%;bottom:-10px;animation:floatUp 4.5s infinite alternate}
-#emoji-5{left:-15px;top:40%;animation:floatSide 3.5s infinite alternate-reverse}
-
-@keyframes floatSide{to{transform:translateX(30px) rotate(30deg)}}
-@keyframes floatSideRight{to{transform:translateX(-30px) rotate(-30deg)}}
-@keyframes floatDown{to{transform:translateY(40px)}}
-@keyframes floatUp{to{transform:translateY(-40px)}}
-
-/* Layout */
-.page-container{
-  width:90%;
-  max-width:1100px;
-  height:80vh;
-  position:relative;
-}
-
 .section{
-  position:absolute;
-  inset:0;
-  display:none;
-  flex-direction:column;
-  justify-content:center;
-  align-items:center;
-  text-align:center;
+display:none;
+position:absolute;
+width:100%;
+height:100%;
+text-align:center;
+justify-content:center;
+align-items:center;
+flex-direction:column;
 }
-
 .section.active{display:flex}
 
-h1{
-  font-family:'Playfair Display',serif;
-  font-size:clamp(2.5rem,8vw,5rem);
-  margin-bottom:20px;
+/* ---------- NAV ---------- */
+.nav{
+position:fixed;
+bottom:40px;
+display:flex;
+gap:25px;
+z-index:2;
 }
-
-.accent{color:var(--gold);font-style:italic}
-
-.message{
-  max-width:650px;
-  font-size:1.1rem;
-  line-height:1.8;
-  margin-bottom:30px;
-  background:rgba(0,0,0,.25);
-  padding:18px;
-  border-radius:18px;
+button{
+background:none;
+border:1px solid #d4af37;
+color:#d4af37;
+padding:12px 30px;
+cursor:pointer;
+border-radius:30px;
 }
+button:hover{background:#d4af37;color:black}
 
-/* Gallery */
+/* ---------- GALLERY ---------- */
 .gallery{
-  display:flex;
-  gap:15px;
-  width:100%;
-  max-width:900px;
-  height:300px;
+display:flex;
+gap:15px;
+max-width:900px;
+}
+.gallery img{
+width:100%;
+max-width:260px;
+height:180px;
+object-fit:cover;
+border-radius:15px;
+border:2px solid #d4af37;
 }
 
-.photo{
-  flex:1;
-  border-radius:15px;
-  overflow:hidden;
-  transition:.6s;
+/* ---------- GAME ---------- */
+#gameBox{
+width:90%;
+max-width:500px;
+height:300px;
+border:2px dashed #d4af37;
+border-radius:20px;
+position:relative;
+overflow:hidden;
 }
-
-.photo:hover{flex:2.5}
-
-.photo img{
-  width:100%;
-  height:100%;
-  object-fit:cover;
+.heart-game{
+position:absolute;
+font-size:32px;
+cursor:pointer;
 }
+#score{margin-top:10px;font-size:18px}
 
-/* Memory Game */
-#memory-game{
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:15px;
-  width:320px;
-  margin-top:20px;
-}
+/* ---------- FINAL ---------- */
+#kitty{font-size:80px;margin-top:20px}
 
-.card{
-  height:90px;
-  border-radius:15px;
-  background:rgba(255,255,255,.08);
-  border:2px solid var(--gold);
-  font-size:2.2rem;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  cursor:pointer;
+/* ---------- MUSIC TOGGLE ---------- */
+.music-toggle{
+position:fixed;
+top:25px;
+right:25px;
+background:none;
+border:2px solid #d4af37;
+color:#d4af37;
+padding:8px 12px;
+border-radius:50px;
+cursor:pointer;
+z-index:3;
 }
-
-.card.open{background:var(--gold);color:#000}
-.card.matched{background:var(--rose);color:#000}
-
-/* Cake */
-.cake{
-  font-size:6rem;
-  cursor:pointer;
-  transition:.4s;
-}
-.cake.cut{
-  transform:scale(.9) rotate(-8deg);
-  opacity:.6;
-}
-
-/* Letter */
-.letter{
-  max-width:720px;
-  background:#f5e6c8;
-  color:#2c1d12;
-  padding:40px;
-  border-radius:12px;
-  margin-top:25px;
-  font-family:'Playfair Display',serif;
-  font-size:1.1rem;
-  line-height:1.9;
-  box-shadow:0 0 50px rgba(0,0,0,.7);
-  display:none;
-}
-
-/* Navigation */
-.nav-footer{
-  position:fixed;
-  bottom:40px;
-  display:flex;
-  gap:30px;
-}
-
-.btn{
-  background:none;
-  border:1px solid var(--gold);
-  color:var(--gold);
-  padding:12px 28px;
-  letter-spacing:2px;
-  cursor:pointer;
-}
-.btn:hover{background:var(--gold);color:#000}
 </style>
+</head>
 
+<body>
 
+<!-- HEART BACKGROUND -->
+<div class="heart-bg" id="heartBg"></div>
 
+<!-- MUSIC TOGGLE BUTTON -->
+<button class="music-toggle" id="musicBtn">🔊</button>
 
-<!-- 🎵 Background Music -->
-<audio id="bgMusic" loop="">
+<!-- MUSIC (YOUR LINK) -->
+<audio id="bgMusic" loop>
   <source src="song.mp3" type="audio/mpeg">
 </audio>
 
-<canvas id="bgCanvas" width="1890" height="945"></canvas>
+<div class="container">
 
-<div class="love-emoji" id="emoji-1">🐱</div>
-<div class="love-emoji" id="emoji-2">😻</div>
-<div class="love-emoji" id="emoji-3">🧸</div>
-<div class="love-emoji" id="emoji-4">🌹</div>
-<div class="love-emoji" id="emoji-5">👩‍❤️‍👨</div>
+    <div class="section active">
+        <h1>Happy 1st <span class="accent">Anniversary</span> ❤️</h1>
+        <p>365 days of love, laughter, and memories.</p>
+    </div>
 
-<div class="page-container">
+    <div class="section">
+        <h1>Our <span class="accent">Story</span></h1>
+        <p>From strangers to soulmates — every day with you is magic.</p>
+    </div>
 
-<section class="section">
-<h1>Happy 1st <span class="accent">Anniversary</span> ❤️</h1>
-<p class="message">💖 <strong data-start="96" data-end="153" class="">“One year, countless memories, and forever to go 💍✨”</strong></p>
-</section>
+    <div class="section">
+        <h1>Captured <span class="accent">Moments</span></h1>
+        <div class="gallery">
+            <img src="img1.jpg">
+            <img src="img2.jpg">
+            <img src="img3.jpg">
+        </div>
+    </div>
 
-<section class="section">
-<h1 class="">Our <span class="accent">First Year</span></h1>
-<p class="message"><strong data-start="229" data-end="260" class="">On our first anniversary 💖</strong><br data-start="260" data-end="263">
-<strong data-start="263" data-end="279">Still you 🤍</strong><br data-start="279" data-end="282">
-<strong data-start="282" data-end="298">Always you ✨</strong></p>
-</section>
+    <div class="section">
+        <h1>Catch the <span class="accent">Love</span> 💖</h1>
+        <div id="gameBox"></div>
+        <div id="score">Hearts: 0</div>
+    </div>
 
-<section class="section">
-<h1>Captured <span class="accent">Memories</span></h1>
-<div class="gallery">
-  <div class="photo"><img src="img1.jpg" class=""></div>
-  <div class="photo"><img src="img2.jpg" class=""></div>
-  <div class="photo"><img src="img3.jpg" class=""></div>
-</div>
-</section>
-
-<section class="section">
-<h1>Match Our <span class="accent">Love</span> 💕</h1>
-<p class="message">Find all matching hearts</p>
-<div id="memory-game"><div class="card open matched">🐱</div><div class="card open matched">🐱</div><div class="card open matched">❤️</div><div class="card open matched">💖</div><div class="card open matched">❤️</div><div class="card open matched">💖</div></div>
-<h2 id="matchStatus" class="">Matches: 3 / 3</h2>
-</section>
-
-<section class="section">
-<h1 class="">Forever <span class="accent">&amp; Always</span></h1>
-<p class="message"></p><p class="">Forever &amp; Always 💖♾️, I choose you in every moment and every mood.<br>Through storms and smiles, my hand stays in yours 🤍🤞<br>No distance, no time just us, growing stronger 🌙✨<br>Today, tomorrow, and every heartbeat after… Forever &amp; Always 🫶💫</p><p></p>
-<button class="btn" onclick="goToCake()">Celebrate ✨</button>
-</section>
-
-<section class="section active">
-<h1 class="">Make a <span class="accent">Wish</span> 🎂</h1>
-<p class="message"><b>Click the cake to cut it</b></p>
-<div class="cake cut" onclick="cutCake()">🎂</div>
-
-<div class="letter" id="letter" style="display: block;">
-<p class=""></p><p data-start="117" data-end="129"><strong data-start="117" data-end="129">My Love,</strong></p>
-<p data-start="131" data-end="410">Happy First Anniversary 🤍<br data-start="157" data-end="160">
-It feels unreal that a whole year has passed since we began this beautiful journey together. One year of laughter, small fights, late-night talks, silent understandings, and endless love. Every single day with you has taught me what love truly means.</p>
-<p data-start="412" data-end="615" class="">You became my comfort on hard days and my happiness on ordinary ones. When the world felt heavy, your presence made everything lighter. I never knew love could feel this safe, this warm, this <em data-start="604" data-end="610" class="">home</em> 🫶</p>
-<p data-start="617" data-end="722"><em data-start="617" data-end="722" class="">“Tum saath ho toh har mushkil aasaan lagti hai,<br data-start="665" data-end="668">
-Tumhari muskaan mein hi meri poori duniya basti hai.”</em></p>
-<p data-start="724" data-end="946" class="">This year wasn’t perfect—but it was <strong data-start="760" data-end="768">real</strong>, and that’s what makes it beautiful. We grew, we learned, and we chose each other again and again. And I promise, no matter what comes our way, my hand will always find yours 🤞</p>
-<p data-start="948" data-end="1037"><em data-start="948" data-end="1037" class="">“Ek saal nahi, ek kahani likhi hai humne,<br data-start="990" data-end="993">
-Har mod par sirf tumhe hi chuna hai humne.”</em></p>
-<p data-start="1039" data-end="1257" class="  ablefocused">Thank you for loving me the way you do, for understanding my silence, and for standing by me when I needed you the most. I don’t know what the future holds, but I know one thing for sure I want every tomorrow with you.</p>
-<p data-start="1259" data-end="1314"><em data-start="1259" data-end="1314" class="">“Aaj bhi tum, kal bhi tum,<br data-start="1286" data-end="1289">
-Har janam mein bas tum.”</em></p>
-<p data-start="1316" data-end="1378" class="">Forever &amp; Always ♾️<br data-start="1335" data-end="1338">
-With all my love,<br data-start="1355" data-end="1358">
-<strong data-start="1358" data-end="1378" class="">Yours, always ❤️</strong></p>
-<hr data-start="1380" data-end="1383">
-<p data-start="1385" data-end="1497" data-is-last-node="" data-is-only-node="">If you want, I can make it <strong data-start="1412" data-end="1423">shorter</strong>, <strong data-start="1425" data-end="1447">mor</strong></p><p></p>
-</div>
-</section>
+    <div class="section">
+        <h1>Forever <span class="accent">& Always</span></h1>
+        <p>You are my home, my heart, my forever.</p>
+        <div id="kitty">🐱🤍🐱</div>
+    </div>
 
 </div>
 
-<div class="nav-footer" id="nav" style="display: none;">
-<button class="btn" onclick="prev()">Back</button>
-<button class="btn" onclick="next()">Next</button>
+<div class="nav">
+    <button onclick="prev()">Back</button>
+    <button onclick="next()">Next</button>
 </div>
 
 <script>
-/* 🎵 Autoplay music on first interaction */
-const music = document.getElementById("bgMusic");
-document.addEventListener("click", function startMusic(){
-  music.play().catch(()=>{});
-  document.removeEventListener("click", startMusic);
-});
+/* ---------- NAV ---------- */
+const sections=document.querySelectorAll('.section');
+let index=0;
 
-/* Background hearts */
-const c=document.getElementById("bgCanvas"),ctx=c.getContext("2d");
-function resize(){c.width=innerWidth;c.height=innerHeight}
-resize();addEventListener("resize",resize);
+function show(i){
+    sections.forEach(s=>s.classList.remove('active'));
+    sections[i].classList.add('active');
+    if(i===3) startGame();
+    else stopGame();
+}
+function next(){ if(index<sections.length-1){ index++; show(index); } }
+function prev(){ if(index>0){ index--; show(index); } }
 
-const hearts=[...Array(40)].map(()=>({
-x:Math.random()*c.width,
-y:Math.random()*c.height,
-s:Math.random()+.5,
-t:Math.random()>.5?"❤️":"💖"
-}));
+/* ---------- GAME ---------- */
+let hearts=[];
+let score=0;
+let running=false;
+const box=document.getElementById('gameBox');
+const scoreEl=document.getElementById('score');
 
-(function animate(){
-ctx.clearRect(0,0,c.width,c.height);
-hearts.forEach(h=>{
-ctx.font=`${16*h.s}px serif`;
-ctx.fillText(h.t,h.x,h.y);
-h.y-=h.s;
-if(h.y<-20)h.y=c.height+20;
-});
-requestAnimationFrame(animate);
-})();
-
-/* Navigation */
-let current=0;
-const sections=document.querySelectorAll(".section");
-const nav=document.getElementById("nav");
-
-function show(){
-sections.forEach(s=>s.classList.remove("active"));
-sections[current].classList.add("active");
-nav.style.display=(current===3||current===5)?"none":"flex";
-if(current===3) initGame();
+function startGame(){
+    stopGame();
+    running=true;
+    score=0;
+    scoreEl.textContent="Hearts: 0";
+    requestAnimationFrame(loop);
+    spawn();
 }
 
-function next(){ if(current<sections.length-1){current++;show();} }
-function prev(){ if(current>0){current--;show();} }
-function goToCake(){ current=5; show(); }
+function stopGame(){
+    running=false;
+    hearts=[];
+    box.innerHTML="";
+}
 
-/* Memory Game */
-const emojis=["❤️","❤️","💖","💖","🐱","🐱"];
-let open=[],matches=0,started=false;
+function spawn(){
+    if(!running) return;
+    const h=document.createElement('div');
+    h.className='heart-game';
+    h.textContent='💝';
+    h.style.left=Math.random()*(box.clientWidth-30)+'px';
+    h.style.top='-30px';
+    box.appendChild(h);
 
-function initGame(){
-if(started)return;
-started=true;
-const game=document.getElementById("memory-game");
-emojis.sort(()=>.5-Math.random());
-emojis.forEach(e=>{
-const c=document.createElement("div");
-c.className="card";
-c.textContent="❓";
-c.onclick=()=>{
-if(c.classList.contains("open")||c.classList.contains("matched"))return;
-c.textContent=e;c.classList.add("open");
-open.push({c,e});
-if(open.length===2)setTimeout(check,600);
+    hearts.push({el:h,y:-30});
+
+    h.onclick=()=>{
+        score++;
+        scoreEl.textContent="Hearts: "+score;
+        h.remove();
+        hearts=hearts.filter(x=>x.el!==h);
+    };
+
+    setTimeout(spawn,800);
+}
+
+function loop(){
+    if(!running) return;
+    hearts.forEach(o=>{
+        o.y+=2;
+        o.el.style.top=o.y+'px';
+        if(o.y>box.clientHeight){
+            o.el.remove();
+        }
+    });
+    hearts=hearts.filter(o=>o.y<=box.clientHeight);
+    requestAnimationFrame(loop);
+}
+
+/* ---------- HEART BACKGROUND SPAWNER ---------- */
+const heartBg=document.getElementById('heartBg');
+setInterval(()=>{
+    const h=document.createElement('div');
+    h.className='heart';
+    h.textContent=Math.random()>0.5?'❤️':'💖';
+    h.style.left=Math.random()*100+'vw';
+    h.style.animationDuration=8+Math.random()*6+'s';
+    h.style.fontSize=14+Math.random()*20+'px';
+    heartBg.appendChild(h);
+    setTimeout(()=>h.remove(),15000);
+},500);
+
+/* ---------- MUSIC TOGGLE ---------- */
+const audio=document.getElementById('bgMusic');
+const musicBtn=document.getElementById('musicBtn');
+
+musicBtn.onclick = function() {
+    if(audio.paused){
+        audio.play();
+        musicBtn.textContent = "🔊";
+    } else {
+        audio.pause();
+        musicBtn.textContent = "🎵";
+    }
 };
-game.appendChild(c);
-});
-}
-
-function check(){
-const[a,b]=open;
-if(a.e===b.e){
-a.c.classList.add("matched");
-b.c.classList.add("matched");
-matches++;
-}else{
-[a.c,b.c].forEach(x=>{x.textContent="❓";x.classList.remove("open")});
-}
-document.getElementById("matchStatus").innerText=`Matches: ${matches} / 3`;
-open=[];
-if(matches===3) nav.style.display="flex";
-}
-
-function cutCake(){
-document.querySelector(".cake").classList.add("cut");
-setTimeout(()=>document.getElementById("letter").style.display="block",800);
-}
-
-show();
 </script>
 
-
-
-          
-
-        </body></html>
-
+</body>
+</html>
